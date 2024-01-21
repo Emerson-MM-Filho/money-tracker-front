@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: ./local-development/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../src:/app
+    environment:
+      - PORT=3000
+    tty: true
+    stdin_open: true
